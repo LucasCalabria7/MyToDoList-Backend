@@ -411,24 +411,24 @@ app.delete("/tasks/:taskId/users/:userId", async (req: Request, res: Response) =
 //GetUsersWithTasks
 app.get("/tasks/users", async (req: Request, res: Response) => {
     try {
-        const result = await db("tasks")
-            .select(
-                "tasks.id AS taskId",
-                "title",
-                "description",
-                "created_at AS createdAt",
-                "status",
-                "user_id AS userId",
-                "name",
-                "email",
-                "password"
-            )
-            .leftJoin("users_tasks", "users_tasks.task_id", "=", "tasks.id")
-            .leftJoin("users", "users_tasks.user_id", "=", "users.id")
+        // const result = await db("tasks")
+        //     .select(
+        //         "tasks.id AS taskId",
+        //         "title",
+        //         "description",
+        //         "created_at AS createdAt",
+        //         "status",
+        //         "user_id AS userId",
+        //         "name",
+        //         "email",
+        //         "password"
+        //     )
+        //     .leftJoin("users_tasks", "users_tasks.task_id", "=", "tasks.id")
+        //     .leftJoin("users", "users_tasks.user_id", "=", "users.id")
 
         const tasks = await db("tasks")
 
-        // const result = []
+        const result = []
 
         for (let task of tasks) {
             const responsibles = []
