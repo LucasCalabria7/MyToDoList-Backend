@@ -25,38 +25,40 @@ CREATE TABLE
         FOREIGN KEY (task_id) REFERENCES tasks (id) ON UPDATE CASCADE
     );
 
+    DROP TABLE users_tasks;
+
 INSERT INTO
     users (id, name, email, password)
 VALUES (
         "f001",
-        "Fulano",
-        "fulano@email.com",
-        "fulano123"
+        "John Doe",
+        "john@email.com",
+        "j123"
     ), (
         "f002",
-        "Beltrana",
-        "beltrana@email.com",
-        "beltrana00"
+        "Mary Jane",
+        "mj@email.com",
+        "mj123"
     );
 
 INSERT INTO
     tasks (id, title, description)
 VALUES (
         "t001",
-        "Implementar o header",
-        "Criar o componente Header do site"
+        "Create header",
+        "Create Header component following Figma design"
     ), (
         "t002",
-        "Implementar o footer",
-        "Criar o componente Footer do site"
+        "Create footer",
+        "Create Footer component following Figma design"
     ), (
         "t003",
-        "Testar site",
-        "Teste de usabilidade de todo o site"
+        "Test website",
+        "Test the website usability"
     ), (
         "t004",
-        "Deploy do site",
-        "Subir o site no surge"
+        "Deploy",
+        "Use Surgee or Vercel to Deploy the application"
     );
 
 INSERT INTO
